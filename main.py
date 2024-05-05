@@ -63,5 +63,5 @@ def calculate_profit_route(scheme_code: str,
             return {"profit": profit}
 
     except Exception as e:  # General Error Handling
-        logging.error(e)
+        logging.error(f"Error in Main.py[calc_profit_route]: {e}")
         raise HTTPException(status_code=400, detail=str(e))

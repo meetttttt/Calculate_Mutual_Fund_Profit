@@ -67,11 +67,11 @@ def calculate_profit(scheme_code: str, start_date, end_date, capital: float) -> 
         net_profit = value_redemption - capital
 
         # Log the output
-        logging.info(f"Profit for {scheme_code}: {net_profit}")
+        logging.info(f"Profit: {net_profit}")
 
         # Return the calculated net profit
         return True, net_profit
 
     except (KeyError, ValueError) as e:
-        logging.error(e)
+        logging.error(f"Error in Utils.py[calculate_profit]: {e}")
         return False, str(e)
